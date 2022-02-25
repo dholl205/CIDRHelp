@@ -39,11 +39,11 @@ def readFile():
 
 def writeFile():
   listings = []
-  for i in final:
+  for cidr, asn, org in final:
     newdict = {
-      "CIDR": i[0],
-      "ASN": i[1],
-      "Organisation": i[2]
+      "CIDR": cidr,
+      "ASN": asn,
+      "Organisation": org
     }
     listings.append(newdict)
   with open('test.json', "w+") as file:
