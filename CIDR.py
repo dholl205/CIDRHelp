@@ -1,4 +1,4 @@
-import requests, csv, json
+import requests, csv, json, config
 
 
 apple = {
@@ -6,7 +6,7 @@ apple = {
   "depthLimit": 1, 
   "bogonsOnly": "false", 
   "localityLanguage": "en",
-  "key": '66364ee2827341bf8c95821153c21056'
+  "key": ''
 }
 
 final = []
@@ -51,11 +51,11 @@ def writeFile():
 
 
 def main():
+  apple["key"] = config.key
   listings = readFile()
   for ip in listings:
     use(ip)
   writeFile()
-  print(final)
 
 
 main()
